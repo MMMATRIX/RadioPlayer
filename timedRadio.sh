@@ -1,10 +1,11 @@
 #!/bin/bash
+url="$1"
 function startRadio()
 {
 	local procnum_="$1"
 	if [[ $procnum_ == 0 ]]
 		then
-			ffplay https://audio.radio-banovina.hr:9998/stream &
+			ffplay $url &
 		fi
 }
 function stopRadio()
@@ -64,10 +65,10 @@ do
 		"13:15")
 			stopRadio $procnum
 			;;
-		"test1")
+		"21:54")
 			startRadio $procnum
 			;;
-		"test2")
+		"21:55")
 			stopRadio $procnum
 			;;
 		*)
