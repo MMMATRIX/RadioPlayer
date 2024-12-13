@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call Python Function</title>
+</head>
+<body>
+    <h1>Click the button to call a Python function</h1>
+    <form>
+        <button type="button" onclick="startRadio()">On</button>
+        <button type="button" onclick="stopRadio()">Off</button>
+    </form>
+    <script>
+      function startRadio()
+      {
+        fetch('/startRadio')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+      }
+      function stopRadio()
+      {
+        fetch('/stopRadio')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+      }
+    </script>
+</body>
+</html>
+  
