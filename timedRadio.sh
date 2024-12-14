@@ -1,5 +1,7 @@
 #!/bin/bash
 url="$1"
+starttime="$2"
+endtime="$3"
 function startRadio()
 {
 	local procnum_="$1"
@@ -23,58 +25,43 @@ do
 	procnum=$(pgrep -c ffplay)
 		
 	case $current_time in 
-		"7:45")
+		07:[4-5][0-9])
 			startRadio $procnum
-			;;
-		"8:00")
-			stopRadio $procnum
-			;;
-		"8:45")
+		;;
+		
+		08:4[5-9])
 			startRadio $procnum
-			;;
-		"8:50")
-			stopRadio $procnum
-			;;
-		"9:35")
+		;;
+
+		09:3[5-9])
 			startRadio $procnum
-			;;
-		"9:40")
-			stopRadio $procnum
-			;;
-		"10:25")
+		;;
+		
+		10:2[5-9])
 			startRadio $procnum
-			;;
-		"10:45")
-			stopRadio $procnum
-			;;
-		"11:30")
+		;;
+		10:3[0-9])
 			startRadio $procnum
-			;;
-		"11:35")
-			stopRadio $procnum
-			;;
-		"12:20")
+		;;
+		10:4[0-4])
 			startRadio $procnum
-			;;
-		"12:25")
-			stopRadio $procnum
-			;;
-		"13:10")
+		;;
+		
+		11:3[0-4])
 			startRadio $procnum
-			;;
-		"13:15")
-			stopRadio $procnum
-			;;
-		"21:54")
+		;;
+		
+		12:2[0-4])
 			startRadio $procnum
-			;;
-		"21:55")
-			stopRadio $procnum
-			;;
+		;;
+		
+		13:1[0-4])
+			startRadio $procnum
+		;;
+		
 		*)
-			echo "invalid"
+			stopRadio $procnum
 			;;
 	esac
-	
 		sleep 3
 done
